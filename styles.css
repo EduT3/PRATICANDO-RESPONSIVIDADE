@@ -24,3 +24,26 @@ body {
     font-size: 16px;
     font-weight: 400;
 }
+
+/* Acessibilidade e contenção em telas pequenas. */
+* { box-sizing: border-box; }
+body { line-height: 1.5; }
+img { max-width: 100%; }
+a:focus-visible, input:focus-visible { outline: 3px solid #9c4800; outline-offset: 4px; }
+.skip-link { position: absolute; top: -5rem; left: 1rem; z-index: 30; padding: 1rem; background: white; color: #002f52; }
+.skip-link:focus { top: 1rem; }
+.lista-menu { z-index: 20; box-shadow: 0 8px 20px #0002; }
+.container__botao, .opções__botão { display: block; position: absolute; width: 1px; height: 1px; clip-path: inset(50%); overflow: hidden; }
+.container__botao:focus-visible + label, .opções__botão:focus-visible + label { outline: 3px solid #9c4800; outline-offset: -3px; }
+.container__rotulo, .opções__rotulo { cursor: pointer; }
+.card__descrição { gap: 1rem; }
+.descrição { min-width: 0; }
+.descrição__imagem { width: 40%; object-fit: contain; align-self: center; }
+.card__botões { gap: .5rem; flex-wrap: wrap; align-items: center; }
+.botões__ancora { background: #985600; }
+.carrossel__titulo, .descrição__titulo { color: #985600; }
+.swiper-fallback .swiper-wrapper { display: flex; overflow-x: auto; gap: 1rem; }
+.swiper-fallback .swiper-slide { flex: 0 0 40%; }
+.swiper-fallback .swiper-button-prev, .swiper-fallback .swiper-button-next { display: none; }
+@media (max-width: 380px) { .container__imagem { padding: .65rem; } .contato__email { width: 100%; } }
+@media (min-width: 1024px) { .container__botao, .container__rotulo { display: none; } }

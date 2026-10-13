@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -15,9 +15,10 @@
 </head>
 
 <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
     <header class="cabeçalho">
         <div class="container">
-            <input type="checkbox" id="menu" class="container__botao">
+            <input type="checkbox" id="menu" class="container__botao" aria-label="Abrir categorias">
             <label for="menu" class="container__rotulo">
                 <span class="cabeçalho__menu-hamburguer container__imagem"></span>
             </label>
@@ -43,10 +44,10 @@
             <h1 class="container__titulo"><b class="container__titulo--negrito">Alura</b>Books</h1>
         </div>
 
-        <ul class="opções">
-            <input type="checkbox" id="opções-menu" class="opções__botão">
+        <nav class="opções" aria-label="Navegação principal">
+            <input type="checkbox" id="opções-menu" class="opções__botão" aria-label="Abrir categorias">
             <label for="opções-menu" class="opções__rotulo">
-                <li class="opções__item">Categorias</li>
+                <span class="opções__item">Categorias</span>
             </label>
 
             <ul class="lista-menu">
@@ -67,9 +68,9 @@
                 </li>
             </ul>
 
-            <li class="opções__item"><a href="#" class="opções__link">Favoritos</a></li>
-            <li class="opções__item"><a href="#" class="opções__link">Minha estante</a></li>
-        </ul>
+            <a href="#" class="opções__item opções__link">Favoritos</a>
+            <a href="#" class="opções__item opções__link">Minha estante</a>
+        </nav>
 
         <div class="container">
             <a href="#"><img src="img/Favoritos.svg" alt="Meus favoritos"
@@ -84,10 +85,11 @@
             </a>
         </div>
     </header>
+    <main id="conteudo">
     <section class="banner">
         <h2 class="banner__titulo">Já sabe por onde começar?</h2>
         <p class="banner__texto">Encontre em nossa estante o que precisa para seu desenvolvimento!</p>
-        <input type="search" class="banner__pesquisa" placeholder="Qual será sua próxima leitura?">
+        <input type="search" aria-label="Pesquisar livros (demonstração visual)" class="banner__pesquisa" placeholder="Qual será sua próxima leitura?">
     </section>
     <section class="carrossel">
         <h2 class="carrossel__titulo">Novos lançamentos</h2>
@@ -126,7 +128,7 @@
                         <p class="descrição__texto">Construindo uma aplicação integrada com a plataforma do Google.</p>
                     </div>
                     <!-- 2º coluna -->
-                    <img src="img/Angular.svg" class="descrição__imagem">
+                    <img src="img/Angular.svg" alt="Capa do livro Angular 11 e Firebase" class="descrição__imagem">
                 </div>
 
                 <!-- 2º linha -->
@@ -183,7 +185,7 @@
                         </p>
                     </div>
                     <!-- 2º coluna -->
-                    <img src="img/Escritora.svg" class="descrição__imagem">
+                    <img src="img/Escritora.svg" alt="Retrato da autora em destaque" loading="lazy" class="descrição__imagem">
                 </div>
 
                 <!-- 2º linha -->
@@ -235,9 +237,10 @@
             <h2 class="contato__titulo">Fique por dentro das novidades!</h2>
             <p class="contato__texto">Atualizações de e-books, novos livros, promoções e outros.</p>
         </div>
-        <input type="email" placeholder="Cadastre seu e-mail" class="contato__email">
+        <input type="email" aria-label="E-mail (demonstração visual, sem envio)" placeholder="Cadastre seu e-mail" class="contato__email">
     </section>
 
+    </main>
     <hr />
 
     <footer class="rodapé">
@@ -320,16 +323,7 @@
     </footer>
 
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-    <script>
-        const swiper = new Swiper('.swiper', {
-            spaceBetween: 10,
-            slidesPerView: 3,
-            pagination: {
-                el: '.swiper-pagination',
-                type: 'bullets',
-            },
-        });
-    </script>
+    <script src="./script.js"></script>
 </body>
 
 </html>
